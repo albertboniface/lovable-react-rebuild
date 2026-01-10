@@ -41,10 +41,10 @@ export const Navigation = () => {
             <a href="#home" className="relative z-10">
               <h1
                 className={`font-display text-2xl md:text-3xl font-semibold tracking-wide transition-colors duration-300 ${
-                  isScrolled ? "text-charcoal" : "text-cream"
+                  isScrolled ? "text-forest" : "text-cream"
                 }`}
               >
-                Serenity<span className="text-gold">.</span>
+                Serenity<span className="text-gold-accent">.</span>
               </h1>
             </a>
 
@@ -54,8 +54,8 @@ export const Navigation = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold ${
-                    isScrolled ? "text-charcoal" : "text-cream"
+                  className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
+                    isScrolled ? "text-forest" : "text-cream"
                   }`}
                 >
                   {link.name}
@@ -70,7 +70,7 @@ export const Navigation = () => {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`lg:hidden relative z-10 p-2 transition-colors ${
-                isScrolled ? "text-charcoal" : "text-cream"
+                isScrolled ? "text-forest" : "text-cream"
               }`}
             >
               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -87,7 +87,7 @@ export const Navigation = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-charcoal lg:hidden"
+            className="fixed inset-0 z-40 bg-primary-green-dark lg:hidden"
           >
             <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-8">
               {navLinks.map((link, index) => (
@@ -98,7 +98,7 @@ export const Navigation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="text-2xl font-display text-cream hover:text-gold transition-colors"
+                  className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
                 >
                   {link.name}
                 </motion.a>

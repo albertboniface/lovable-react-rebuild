@@ -27,7 +27,7 @@ export const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="text-gold font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6"
+          className="text-gold-accent font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6"
         >
           Welcome to Paradise
         </motion.p>
@@ -40,7 +40,7 @@ export const HeroSection = () => {
         >
           Luxury Living
           <br />
-          <span className="italic">in Nature</span>
+          <span className="italic text-gold-accent-light">in Nature</span>
         </motion.h1>
 
         <motion.p
@@ -78,7 +78,7 @@ export const HeroSection = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <a href="#amenities" className="text-cream/60 hover:text-gold transition-colors">
+          <a href="#amenities" className="text-cream/60 hover:text-gold-accent transition-colors">
             <ChevronDown size={32} />
           </a>
         </motion.div>

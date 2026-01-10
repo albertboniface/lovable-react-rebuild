@@ -63,30 +63,30 @@ const AccommodationCard = ({
           alt={accommodation.name}
           className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-500" />
-        <div className="absolute top-4 right-4 bg-gold text-charcoal px-4 py-2 text-sm font-semibold tracking-wide">
+        <div className="absolute inset-0 bg-primary-green/0 group-hover:bg-primary-green/20 transition-colors duration-500" />
+        <div className="absolute top-4 right-4 bg-gold-accent text-forest px-4 py-2 text-sm font-semibold tracking-wide rounded-sm">
           {accommodation.price}
         </div>
       </div>
 
-      <h3 className="font-display text-2xl text-charcoal mb-3">
+      <h3 className="font-display text-2xl text-forest mb-3">
         {accommodation.name}
       </h3>
       <p className="text-muted-foreground font-body text-sm leading-relaxed mb-5">
         {accommodation.description}
       </p>
 
-      <div className="flex items-center gap-6 text-sm text-charcoal-light mb-6">
+      <div className="flex items-center gap-6 text-sm text-forest-light mb-6">
         <span className="flex items-center gap-2">
-          <Users className="w-4 h-4 text-gold" />
+          <Users className="w-4 h-4 text-accent-green" />
           {accommodation.guests} Guests
         </span>
         <span className="flex items-center gap-2">
-          <Maximize className="w-4 h-4 text-gold" />
+          <Maximize className="w-4 h-4 text-accent-green" />
           {accommodation.size}
         </span>
         <span className="flex items-center gap-2">
-          <Bed className="w-4 h-4 text-gold" />
+          <Bed className="w-4 h-4 text-accent-green" />
           {accommodation.beds}
         </span>
       </div>
@@ -116,10 +116,10 @@ export const AccommodationsSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-accent-green font-body text-sm tracking-[0.3em] uppercase mb-4">
             Your Sanctuary Awaits
           </p>
-          <h2 className="font-display text-3xl md:text-5xl text-charcoal mb-6">
+          <h2 className="font-display text-3xl md:text-5xl text-forest mb-6">
             Exceptional Accommodations
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
