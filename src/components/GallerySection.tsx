@@ -19,7 +19,7 @@ export const GallerySection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section id="gallery" className="section-padding bg-charcoal">
+    <section id="gallery" className="section-padding bg-primary-green-dark">
       <div className="container-luxury mx-auto">
         <motion.div
           ref={titleRef}
@@ -28,7 +28,7 @@ export const GallerySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-gold-accent font-body text-sm tracking-[0.3em] uppercase mb-4">
             Visual Journey
           </p>
           <h2 className="font-display text-3xl md:text-5xl text-cream mb-6">
@@ -63,12 +63,12 @@ export const GallerySection = () => {
                   }`}
                 />
                 <div
-                  className={`absolute inset-0 bg-gold/0 transition-colors duration-500 ${
-                    hoveredIndex === index ? "bg-gold/20" : ""
+                  className={`absolute inset-0 bg-gold-accent/0 transition-colors duration-500 ${
+                    hoveredIndex === index ? "bg-gold-accent/20" : ""
                   }`}
                 />
                 <div
-                  className={`absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-charcoal/80 to-transparent transition-opacity duration-500 ${
+                  className={`absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-primary-green-dark/90 to-transparent transition-opacity duration-500 ${
                     hoveredIndex === index ? "opacity-100" : "opacity-0"
                   }`}
                 >

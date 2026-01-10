@@ -10,18 +10,18 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground hover:bg-gold-dark shadow-soft hover:shadow-medium rounded-sm",
+          "bg-primary text-primary-foreground hover:bg-primary-green-light shadow-soft hover:shadow-medium rounded-sm",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-md",
         outline:
-          "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground rounded-sm",
+          "border-2 border-primary-green bg-transparent text-primary-green hover:bg-primary-green hover:text-cream rounded-sm",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md",
-        ghost: "hover:bg-accent hover:text-accent-foreground rounded-md",
+        ghost: "hover:bg-soft-green hover:text-primary-green rounded-md",
         link: "text-primary underline-offset-4 hover:underline",
-        hero: "bg-gold text-charcoal font-semibold tracking-wider uppercase hover:bg-gold-light shadow-medium hover:shadow-elevated rounded-sm",
+        hero: "bg-gold-accent text-forest font-semibold tracking-wider uppercase hover:bg-gold-accent-light shadow-medium hover:shadow-elevated rounded-sm",
         heroOutline: "border-2 border-cream bg-transparent text-cream hover:bg-cream/10 tracking-wider uppercase rounded-sm",
-        luxury: "bg-charcoal text-cream hover:bg-charcoal-light shadow-soft hover:shadow-medium tracking-wider uppercase rounded-sm",
+        luxury: "bg-primary-green text-cream hover:bg-primary-green-light shadow-soft hover:shadow-medium tracking-wider uppercase rounded-sm",
       },
       size: {
         default: "h-11 px-6 py-2",

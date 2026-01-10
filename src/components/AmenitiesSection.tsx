@@ -75,12 +75,12 @@ const AmenityCard = ({
       initial={{ opacity: 0, y: 40 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group p-8 bg-cream rounded-sm border border-stone/30 hover:shadow-elevated transition-all duration-500 hover:-translate-y-1"
+      className="group p-8 bg-cream rounded-sm border border-soft-green/50 hover:shadow-elevated hover:border-accent-green/30 transition-all duration-500 hover:-translate-y-1"
     >
-      <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
-        <Icon className="w-7 h-7 text-gold" />
+      <div className="w-14 h-14 rounded-full bg-primary-green/10 flex items-center justify-center mb-6 group-hover:bg-gold-accent/20 transition-colors">
+        <Icon className="w-7 h-7 text-primary-green group-hover:text-gold-accent transition-colors" />
       </div>
-      <h3 className="font-display text-xl text-charcoal mb-3">{title}</h3>
+      <h3 className="font-display text-xl text-forest mb-3">{title}</h3>
       <p className="text-muted-foreground font-body text-sm leading-relaxed">
         {description}
       </p>
@@ -93,7 +93,7 @@ export const AmenitiesSection = () => {
   const isInView = useInView(titleRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="amenities" className="section-padding bg-cream-dark">
+    <section id="amenities" className="section-padding bg-soft-green/30">
       <div className="container-luxury mx-auto">
         <motion.div
           ref={titleRef}
@@ -102,10 +102,10 @@ export const AmenitiesSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <p className="text-gold font-body text-sm tracking-[0.3em] uppercase mb-4">
+          <p className="text-accent-green font-body text-sm tracking-[0.3em] uppercase mb-4">
             Experience Excellence
           </p>
-          <h2 className="font-display text-3xl md:text-5xl text-charcoal mb-6">
+          <h2 className="font-display text-3xl md:text-5xl text-forest mb-6">
             World-Class Amenities
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
