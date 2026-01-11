@@ -5,11 +5,11 @@ import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Accommodations", href: "/accommodations" },
-  { name: "Amenities", href: "/amenities" },
-  { name: "Gallery", href: "/gallery" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Home", href: "/", external: false },
+  { name: "Accommodations", href: "/accommodations", external: false },
+  { name: "Amenities", href: "/amenities", external: false },
+  { name: "Gallery", href: "https://mags23.pixieset.com/crestwoods/", external: true },
+  { name: "Contact", href: "#footer", external: false, scroll: true },
 ];
 
 export const Navigation = () => {
@@ -26,13 +26,15 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (link: typeof navLinks[0], e: React.MouseEvent) => {
     setIsMobileMenuOpen(false);
-    if (href.startsWith("/#")) {
-      if (isHomePage) {
-        const element = document.querySelector(href.replace("/", ""));
-        element?.scrollIntoView({ behavior: "smooth" });
-      }
+    if (link.external) {
+      e.preventDefault();
+      window.open(link.href, "_blank");
+    } else if (link.scroll) {
+      e.preventDefault();
+      const element = document.querySelector(link.href);
+      element?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -68,16 +70,30 @@ export const Navigation = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-10">
               {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  to={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
-                    isScrolled || !isHomePage ? "text-forest" : "text-cream"
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.external ? (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
+                      isScrolled || !isHomePage ? "text-forest" : "text-cream"
+                    }`}
+                  >
+                    {link.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.name}
+                    to={link.scroll ? "#" : link.href}
+                    onClick={(e) => handleNavClick(link, e)}
+                    className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
+                      isScrolled || !isHomePage ? "text-forest" : "text-cream"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <Button 
                 variant={isScrolled || !isHomePage ? "hero" : "heroOutline"} 
@@ -119,13 +135,25 @@ export const Navigation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <Link
-                    to={link.href}
-                    onClick={() => handleNavClick(link.href)}
-                    className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.scroll ? "#" : link.href}
+                      onClick={(e) => handleNavClick(link, e)}
+                      className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </motion.div>
               ))}
               <motion.div

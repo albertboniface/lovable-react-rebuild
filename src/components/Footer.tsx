@@ -6,7 +6,7 @@ const footerLinks = {
     { name: "About Us", href: "/" },
     { name: "Accommodations", href: "/accommodations" },
     { name: "Amenities", href: "/amenities" },
-    { name: "Gallery", href: "/gallery" },
+    { name: "Gallery", href: "https://mags23.pixieset.com/crestwoods/", external: true },
   ],
   experience: [
     { name: "Executive Suite", href: "/accommodations" },
@@ -31,7 +31,7 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-forest pt-20 pb-10">
+    <footer id="footer" className="bg-forest pt-20 pb-10">
       <div className="container-luxury mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
@@ -81,12 +81,23 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.property.map((link) => (
                 <li key={link.name}>
-                  <Link
-                    to={link.href}
-                    className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
-                  >
-                    {link.name}
-                  </Link>
+                  {'external' in link && link.external ? (
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

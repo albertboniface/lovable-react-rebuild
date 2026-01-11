@@ -2,12 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, Maximize, Bed, Star } from "lucide-react";
-import roomSuite from "@/assets/room-suite.jpg";
-import villaExterior from "@/assets/villa-exterior.jpg";
+import executiveSuite from "@/assets/executive-suite.jpg";
+import deluxeSuite from "@/assets/deluxe-suite.jpg";
 
 const accommodations = [
   {
-    image: villaExterior,
+    image: executiveSuite,
     name: "Executive Suite",
     description:
       "Our premier accommodation offering unparalleled luxury with premium furnishings, spacious living areas, and exclusive amenities for the discerning guest.",
@@ -18,7 +18,7 @@ const accommodations = [
     featured: true,
   },
   {
-    image: roomSuite,
+    image: deluxeSuite,
     name: "Deluxe Suite",
     description:
       "Elegant and comfortable suites featuring modern design, quality amenities, and all the essentials for a perfect stay.",
