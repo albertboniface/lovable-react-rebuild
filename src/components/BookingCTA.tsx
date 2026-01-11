@@ -7,6 +7,14 @@ export const BookingCTA = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const handleBookNow = () => {
+    window.open("https://unrealhomes.co.tz/suites", "_blank");
+  };
+
+  const handleRequestCall = () => {
+    window.location.href = "tel:+255711741044";
+  };
+
   return (
     <section id="contact" className="section-padding bg-cream">
       <div className="container-luxury mx-auto">
@@ -42,13 +50,13 @@ export const BookingCTA = () => {
                 <p className="text-cream/70 font-body mb-8 leading-relaxed">
                   Our dedicated team is ready to craft a bespoke experience
                   tailored to your every desire. Contact us today to begin
-                  planning your escape to paradise.
+                  planning your escape to Crest Woods.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button variant="hero" size="lg">
+                  <Button variant="hero" size="lg" onClick={handleBookNow}>
                     Book Now
                   </Button>
-                  <Button variant="heroOutline" size="lg">
+                  <Button variant="heroOutline" size="lg" onClick={handleRequestCall}>
                     Request a Call
                   </Button>
                 </div>
@@ -62,7 +70,9 @@ export const BookingCTA = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-cream text-lg mb-1">Reservations</h4>
-                    <p className="text-cream/60 font-body">+1 (800) 555-0199</p>
+                    <a href="tel:+255711741044" className="text-cream/60 font-body hover:text-gold-accent transition-colors">
+                      +255 711 741 044
+                    </a>
                     <p className="text-cream/40 text-sm font-body">Available 24/7</p>
                   </div>
                 </div>
@@ -73,7 +83,9 @@ export const BookingCTA = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-cream text-lg mb-1">Email</h4>
-                    <p className="text-cream/60 font-body">reservations@serenityresort.com</p>
+                    <a href="mailto:info@crestwoods.co.tz" className="text-cream/60 font-body hover:text-gold-accent transition-colors">
+                      info@crestwoods.co.tz
+                    </a>
                     <p className="text-cream/40 text-sm font-body">Response within 2 hours</p>
                   </div>
                 </div>
@@ -84,8 +96,8 @@ export const BookingCTA = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-cream text-lg mb-1">Location</h4>
-                    <p className="text-cream/60 font-body">Tropical Paradise Island</p>
-                    <p className="text-cream/40 text-sm font-body">Private Island Resort</p>
+                    <p className="text-cream/60 font-body">Goba, Kinondoni</p>
+                    <p className="text-cream/40 text-sm font-body">Dar es Salaam, Tanzania</p>
                   </div>
                 </div>
               </div>

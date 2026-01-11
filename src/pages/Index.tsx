@@ -1,9 +1,8 @@
 import { Navigation } from "@/components/Navigation";
 import { HeroSection } from "@/components/HeroSection";
-import { AmenitiesSection } from "@/components/AmenitiesSection";
-import { AccommodationsSection } from "@/components/AccommodationsSection";
-import { GallerySection } from "@/components/GallerySection";
 import { BookingCTA } from "@/components/BookingCTA";
+import { MapSection } from "@/components/MapSection";
+import { PropertiesSection } from "@/components/PropertiesSection";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
@@ -11,10 +10,9 @@ const Index = () => {
     <main className="overflow-x-hidden">
       <Navigation />
       <HeroSection />
-      <AmenitiesSection />
-      <AccommodationsSection />
-      <GallerySection />
       <BookingCTA />
+      <MapSection />
+      <PropertiesSection />
       <Footer />
     </main>
   );

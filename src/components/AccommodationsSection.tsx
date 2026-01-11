@@ -1,41 +1,33 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Maximize, Bed } from "lucide-react";
+import { ArrowRight, Users, Maximize, Bed, Star } from "lucide-react";
 import roomSuite from "@/assets/room-suite.jpg";
 import villaExterior from "@/assets/villa-exterior.jpg";
-import spaImage from "@/assets/spa.jpg";
 
 const accommodations = [
   {
-    image: roomSuite,
-    name: "Garden Suite",
-    description:
-      "Immerse yourself in nature with floor-to-ceiling windows and private terraces overlooking lush tropical gardens.",
-    guests: 2,
-    size: "75 m²",
-    beds: "King",
-    price: "From $650/night",
-  },
-  {
     image: villaExterior,
-    name: "Ocean Villa",
+    name: "Executive Suite",
     description:
-      "Experience ultimate privacy with your own infinity pool, butler service, and breathtaking ocean panoramas.",
-    guests: 4,
-    size: "180 m²",
-    beds: "2 King",
-    price: "From $1,400/night",
+      "Our premier accommodation offering unparalleled luxury with premium furnishings, spacious living areas, and exclusive amenities for the discerning guest.",
+    guests: 2,
+    size: "85 m²",
+    beds: "King",
+    price: "Premium",
+    featured: true,
   },
   {
-    image: spaImage,
-    name: "Presidential Suite",
+    image: roomSuite,
+    name: "Deluxe Suite",
     description:
-      "The pinnacle of luxury featuring exclusive amenities, private spa, and dedicated concierge service.",
-    guests: 6,
-    size: "350 m²",
-    beds: "3 King",
-    price: "From $3,200/night",
+      "Elegant and comfortable suites featuring modern design, quality amenities, and all the essentials for a perfect stay.",
+    guests: 2,
+    size: "65 m²",
+    beds: "King",
+    price: "Standard",
+    featured: false,
+    count: 3,
   },
 ];
 
@@ -49,13 +41,17 @@ const AccommodationCard = ({
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
+  const handleBookNow = () => {
+    window.open("https://unrealhomes.co.tz/suites", "_blank");
+  };
+
   return (
     <motion.div
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      className="group"
+      className={`group ${accommodation.featured ? 'lg:col-span-1' : 'lg:col-span-1'}`}
     >
       <div className="relative overflow-hidden rounded-sm mb-6">
         <img
@@ -64,9 +60,23 @@ const AccommodationCard = ({
           className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-primary-green/0 group-hover:bg-primary-green/20 transition-colors duration-500" />
-        <div className="absolute top-4 right-4 bg-gold-accent text-forest px-4 py-2 text-sm font-semibold tracking-wide rounded-sm">
+        
+        {accommodation.featured && (
+          <div className="absolute top-4 left-4 bg-gold-accent text-forest px-3 py-1 text-xs font-semibold tracking-wide rounded-sm flex items-center gap-1">
+            <Star className="w-3 h-3" />
+            Featured
+          </div>
+        )}
+        
+        <div className="absolute top-4 right-4 bg-primary-green text-cream px-4 py-2 text-sm font-semibold tracking-wide rounded-sm">
           {accommodation.price}
         </div>
+
+        {'count' in accommodation && accommodation.count && (
+          <div className="absolute bottom-4 left-4 bg-cream/90 text-forest px-3 py-1 text-xs font-semibold tracking-wide rounded-sm">
+            {accommodation.count} Available
+          </div>
+        )}
       </div>
 
       <h3 className="font-display text-2xl text-forest mb-3">
@@ -94,8 +104,9 @@ const AccommodationCard = ({
       <Button
         variant="outline"
         className="group/btn w-full justify-between"
+        onClick={handleBookNow}
       >
-        View Details
+        Book Now
         <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
       </Button>
     </motion.div>
@@ -123,12 +134,12 @@ export const AccommodationsSection = () => {
             Exceptional Accommodations
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto font-body">
-            Each residence is a masterpiece of design, blending contemporary
-            elegance with natural beauty.
+            Choose from our carefully curated selection of suites, each designed
+            for maximum comfort and luxury.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
           {accommodations.map((accommodation, index) => (
             <AccommodationCard
               key={accommodation.name}
