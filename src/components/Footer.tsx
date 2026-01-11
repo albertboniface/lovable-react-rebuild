@@ -1,23 +1,24 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
-  resort: [
-    { name: "About Us", href: "#" },
-    { name: "Sustainability", href: "#" },
-    { name: "Careers", href: "#" },
-    { name: "Press", href: "#" },
+  property: [
+    { name: "About Us", href: "/" },
+    { name: "Accommodations", href: "/accommodations" },
+    { name: "Amenities", href: "/amenities" },
+    { name: "Gallery", href: "/gallery" },
   ],
   experience: [
-    { name: "Accommodations", href: "#accommodations" },
-    { name: "Dining", href: "#" },
-    { name: "Spa & Wellness", href: "#" },
-    { name: "Activities", href: "#" },
+    { name: "Executive Suite", href: "/accommodations" },
+    { name: "Deluxe Suites", href: "/accommodations" },
+    { name: "Spa & Wellness", href: "/amenities" },
+    { name: "Gaming Room", href: "/amenities" },
   ],
   services: [
-    { name: "Private Events", href: "#" },
-    { name: "Weddings", href: "#" },
-    { name: "Corporate Retreats", href: "#" },
-    { name: "Concierge", href: "#" },
+    { name: "Private Events", href: "/#contact" },
+    { name: "Corporate Retreats", href: "/#contact" },
+    { name: "Rooftop BBQ", href: "/amenities" },
+    { name: "Boardroom", href: "/amenities" },
   ],
 };
 
@@ -35,13 +36,32 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <h2 className="font-display text-3xl text-cream mb-4">
-              Serenity<span className="text-gold-accent">.</span>
-            </h2>
+            <Link to="/">
+              <h2 className="font-display text-3xl text-cream mb-4">
+                Crest Woods<span className="text-gold-accent">.</span>
+              </h2>
+            </Link>
             <p className="text-cream/50 font-body text-sm leading-relaxed mb-6 max-w-sm">
-              An exclusive sanctuary where luxury meets nature. Experience the
-              extraordinary at our world-renowned private island resort.
+              An exclusive vacation home where luxury meets comfort. Experience the
+              extraordinary at our premier property in Dar es Salaam.
             </p>
+            
+            {/* Contact Info */}
+            <div className="space-y-3 mb-6">
+              <a href="tel:+255711741044" className="flex items-center gap-2 text-cream/50 hover:text-gold-accent transition-colors">
+                <Phone className="w-4 h-4" />
+                <span className="font-body text-sm">+255 711 741 044</span>
+              </a>
+              <a href="mailto:info@crestwoods.co.tz" className="flex items-center gap-2 text-cream/50 hover:text-gold-accent transition-colors">
+                <Mail className="w-4 h-4" />
+                <span className="font-body text-sm">info@crestwoods.co.tz</span>
+              </a>
+              <div className="flex items-center gap-2 text-cream/50">
+                <MapPin className="w-4 h-4" />
+                <span className="font-body text-sm">Goba, Kinondoni, Dar es Salaam</span>
+              </div>
+            </div>
+
             <div className="flex gap-4">
               {socialLinks.map((social, index) => (
                 <a
@@ -57,16 +77,16 @@ export const Footer = () => {
 
           {/* Links */}
           <div>
-            <h4 className="font-display text-cream text-lg mb-5">Resort</h4>
+            <h4 className="font-display text-cream text-lg mb-5">Property</h4>
             <ul className="space-y-3">
-              {footerLinks.resort.map((link) => (
+              {footerLinks.property.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -77,12 +97,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.experience.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -93,12 +113,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -109,7 +129,7 @@ export const Footer = () => {
         <div className="border-t border-cream/10 pt-10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-cream/30 font-body text-sm">
-              © 2026 Serenity Resort. All rights reserved.
+              © 2026 Crest Woods. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a

@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroImage from "@/assets/hero-villa.jpg";
 
 export const HeroSection = () => {
+  const handleBookYourStay = () => {
+    window.open("https://unrealhomes.co.tz/suites", "_blank");
+  };
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Parallax */}
@@ -15,7 +20,7 @@ export const HeroSection = () => {
       >
         <img
           src={heroImage}
-          alt="Luxury villa interior"
+          alt="Crest Woods luxury vacation home"
           className="w-full h-full object-cover"
         />
         <div className="hero-overlay absolute inset-0" />
@@ -29,7 +34,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-gold-accent font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6"
         >
-          Welcome to Paradise
+          Welcome to Crest Woods
         </motion.p>
 
         <motion.h1
@@ -38,9 +43,9 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl text-cream font-medium leading-tight mb-6"
         >
-          Luxury Living
+          Enjoy Luxury
           <br />
-          <span className="italic text-gold-accent-light">in Nature</span>
+          <span className="italic text-gold-accent-light">Living</span>
         </motion.h1>
 
         <motion.p
@@ -49,7 +54,7 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-cream/80 font-body text-lg md:text-xl font-light mb-10 max-w-2xl mx-auto"
         >
-          Exclusive Villas & Presidential Suites nestled in tropical serenity
+          Exclusive Holiday Homes & Presidential Suites for your perfect getaway
         </motion.p>
 
         <motion.div
@@ -58,12 +63,14 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.9 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <Button variant="hero" size="lg">
+          <Button variant="hero" size="lg" onClick={handleBookYourStay}>
             Book Your Stay
           </Button>
-          <Button variant="heroOutline" size="lg">
-            Explore Villas
-          </Button>
+          <Link to="/accommodations">
+            <Button variant="heroOutline" size="lg">
+              Explore Accommodations
+            </Button>
+          </Link>
         </motion.div>
       </div>
 
@@ -78,7 +85,7 @@ export const HeroSection = () => {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         >
-          <a href="#amenities" className="text-cream/60 hover:text-gold-accent transition-colors">
+          <a href="#contact" className="text-cream/60 hover:text-gold-accent transition-colors">
             <ChevronDown size={32} />
           </a>
         </motion.div>
