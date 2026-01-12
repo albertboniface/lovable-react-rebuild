@@ -8,8 +8,8 @@ const navLinks = [
   { name: "Home", href: "/", external: false },
   { name: "Accommodations", href: "/accommodations", external: false },
   { name: "Amenities", href: "/amenities", external: false },
-  { name: "Gallery", href: "https://mags23.pixieset.com/crestwoods/", external: true },
-  { name: "Contact", href: "#footer", external: false, scroll: true },
+  { name: "Gallery", href: "/gallery", external: false },
+  { name: "About Us", href: "/about", external: false },
 ];
 
 export const Navigation = () => {
@@ -26,16 +26,8 @@ export const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleNavClick = (link: typeof navLinks[0], e: React.MouseEvent) => {
+  const handleNavClick = () => {
     setIsMobileMenuOpen(false);
-    if (link.external) {
-      e.preventDefault();
-      window.open(link.href, "_blank");
-    } else if (link.scroll) {
-      e.preventDefault();
-      const element = document.querySelector(link.href);
-      element?.scrollIntoView({ behavior: "smooth" });
-    }
   };
 
   const handleBookNow = () => {
@@ -70,30 +62,16 @@ export const Navigation = () => {
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-10">
               {navLinks.map((link) => (
-                link.external ? (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
-                      isScrolled || !isHomePage ? "text-forest" : "text-cream"
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={link.name}
-                    to={link.scroll ? "#" : link.href}
-                    onClick={(e) => handleNavClick(link, e)}
-                    className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
-                      isScrolled || !isHomePage ? "text-forest" : "text-cream"
-                    }`}
-                  >
-                    {link.name}
-                  </Link>
-                )
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  onClick={handleNavClick}
+                  className={`text-sm font-medium tracking-wider uppercase transition-colors duration-300 hover:text-gold-accent ${
+                    isScrolled || !isHomePage ? "text-forest" : "text-cream"
+                  }`}
+                >
+                  {link.name}
+                </Link>
               ))}
               <Button 
                 variant={isScrolled || !isHomePage ? "hero" : "heroOutline"} 
@@ -135,25 +113,13 @@ export const Navigation = () => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                 >
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.scroll ? "#" : link.href}
-                      onClick={(e) => handleNavClick(link, e)}
-                      className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.href}
+                    onClick={handleNavClick}
+                    className="text-2xl font-display text-cream hover:text-gold-accent transition-colors"
+                  >
+                    {link.name}
+                  </Link>
                 </motion.div>
               ))}
               <motion.div
