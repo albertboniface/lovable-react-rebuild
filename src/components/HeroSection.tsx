@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-villa.jpg";
+import heroImage from "@/assets/hero-living-room.jpg";
 
 export const HeroSection = () => {
   const handleBookYourStay = () => {
@@ -21,7 +21,7 @@ export const HeroSection = () => {
         <img
           src={heroImage}
           alt="Crest Woods luxury vacation home"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center"
         />
         <div className="hero-overlay absolute inset-0" />
       </motion.div>

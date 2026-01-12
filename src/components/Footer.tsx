@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 const footerLinks = {
   property: [
-    { name: "About Us", href: "/" },
+    { name: "About Us", href: "/about" },
     { name: "Accommodations", href: "/accommodations" },
     { name: "Amenities", href: "/amenities" },
-    { name: "Gallery", href: "https://mags23.pixieset.com/crestwoods/", external: true },
+    { name: "Gallery", href: "/gallery" },
   ],
   experience: [
     { name: "Executive Suite", href: "/accommodations" },
@@ -81,23 +81,12 @@ export const Footer = () => {
             <ul className="space-y-3">
               {footerLinks.property.map((link) => (
                 <li key={link.name}>
-                  {'external' in link && link.external ? (
-                    <a
-                      href={link.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
-                    >
-                      {link.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={link.href}
-                      className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  )}
+                  <Link
+                    to={link.href}
+                    className="text-cream/50 font-body text-sm hover:text-gold-accent transition-colors"
+                  >
+                    {link.name}
+                  </Link>
                 </li>
               ))}
             </ul>
