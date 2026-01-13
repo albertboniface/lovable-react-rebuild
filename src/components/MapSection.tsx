@@ -24,7 +24,7 @@ export const MapSection = () => {
           </h2>
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
             <MapPin className="w-5 h-5 text-gold-accent" />
-            <p className="font-body">Goba, Kinondoni, Dar es Salaam, Tanzania</p>
+            <p className="font-body">Goba, Kinzudi, Dar es Salaam, Tanzania</p>
           </div>
         </motion.div>
 
@@ -35,7 +35,7 @@ export const MapSection = () => {
           className="rounded-sm overflow-hidden shadow-elevated border border-soft-green"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.5660449682383!2d39.2731!3d-6.7631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4c4c4c4c4c4c%3A0x0!2sGoba%2C%20Kinondoni%2C%20Dar%20es%20Salaam!5e0!3m2!1sen!2stz!4v1704931200000!5m2!1sen!2stz"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.8073652840436!2d39.2072024!3d-6.7324619!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c51a7c7a7a7a7%3A0x0!2sGoba%2C%20Kinzudi!5e0!3m2!1sen!2stz!4v1704931200000!5m2!1sen!2stz"
             width="100%"
             height="450"
             style={{ border: 0 }}

@@ -96,7 +96,7 @@ export const BookingCTA = () => {
                   </div>
                   <div>
                     <h4 className="font-display text-cream text-lg mb-1">Location</h4>
-                    <p className="text-cream/60 font-body">Goba, Kinondoni</p>
+                    <p className="text-cream/60 font-body">Goba, Kinzudi</p>
                     <p className="text-cream/40 text-sm font-body">Dar es Salaam, Tanzania</p>
                   </div>
                 </div>

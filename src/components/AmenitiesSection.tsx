@@ -2,40 +2,65 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import {
-  Sparkles,
+  Waves,
   Dumbbell,
   Wifi,
   Wine,
   Gamepad2,
   Flame,
   Users,
+  Clapperboard,
+  Thermometer,
+  Bed,
+  UtensilsCrossed,
+  Shield,
 } from "lucide-react";
 
 const amenities = [
   {
-    icon: Sparkles,
-    title: "Luxury Spa",
-    description: "Rejuvenating treatments with ancient healing traditions",
+    icon: Waves,
+    title: "Swimming Pool",
+    description: "Stunning outdoor pool for relaxation and recreation",
+  },
+  {
+    icon: Users,
+    title: "Private Conference Room",
+    description: "Professional meeting space for business and events",
+  },
+  {
+    icon: Wine,
+    title: "Indoor Bar",
+    description: "Curated collection of fine drinks and cocktails",
+  },
+  {
+    icon: Clapperboard,
+    title: "Cinema Room",
+    description: "Private cinema experience with premium audio-visual setup",
+  },
+  {
+    icon: Thermometer,
+    title: "Steam Room & Dry Sauna",
+    description: "Rejuvenating spa facilities for ultimate relaxation",
+  },
+  {
+    icon: Bed,
+    title: "Massage Bed & Chair",
+    description: "Professional massage equipment for wellness and comfort",
+  },
+  {
+    icon: Gamepad2,
+    title: "Refreshment & Gaming Zone",
+    description: "Entertainment hub with latest gaming consoles and refreshments",
+  },
+  {
+    icon: UtensilsCrossed,
+    title: "Modern Kitchen",
+    description: "Fully equipped gourmet kitchen for culinary experiences",
   },
   {
     icon: Dumbbell,
     title: "Gym",
-    description: "State-of-the-art equipment with personal training",
-  },
-  {
-    icon: Wifi,
-    title: "High-Speed WiFi",
-    description: "Stay connected with premium connectivity",
-  },
-  {
-    icon: Wine,
-    title: "Bar",
-    description: "Curated collection of fine drinks and cocktails",
-  },
-  {
-    icon: Gamepad2,
-    title: "Gaming Room",
-    description: "Entertainment hub with latest gaming consoles and games",
+    description: "State-of-the-art fitness equipment for your workout needs",
   },
   {
     icon: Flame,
@@ -43,9 +68,14 @@ const amenities = [
     description: "Stunning rooftop barbecue area with panoramic views",
   },
   {
-    icon: Users,
-    title: "Boardroom",
-    description: "Professional meeting space for business and events",
+    icon: Wifi,
+    title: "High-Speed WiFi",
+    description: "Stay connected with premium connectivity throughout",
+  },
+  {
+    icon: Shield,
+    title: "24/7 Security",
+    description: "Round-the-clock security for your peace of mind",
   },
 ];
 
@@ -55,7 +85,7 @@ const AmenityCard = ({
   description,
   index,
 }: {
-  icon: typeof Sparkles;
+  icon: typeof Waves;
   title: string;
   description: string;
   index: number;
