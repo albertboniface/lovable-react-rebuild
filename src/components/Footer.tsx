@@ -5,20 +5,19 @@ const footerLinks = {
   property: [
     { name: "About Us", href: "/about" },
     { name: "Accommodations", href: "/accommodations" },
-    { name: "Amenities", href: "/amenities" },
     { name: "Gallery", href: "/gallery" },
   ],
   experience: [
     { name: "Executive Suite", href: "/accommodations" },
     { name: "Deluxe Suites", href: "/accommodations" },
-    { name: "Spa & Wellness", href: "/amenities" },
-    { name: "Gaming Room", href: "/amenities" },
+    { name: "Swimming Pool", href: "/accommodations" },
+    { name: "Gaming Room", href: "/accommodations" },
   ],
   services: [
     { name: "Private Events", href: "/#contact" },
     { name: "Corporate Retreats", href: "/#contact" },
-    { name: "Rooftop BBQ", href: "/amenities" },
-    { name: "Boardroom", href: "/amenities" },
+    { name: "Rooftop BBQ", href: "/accommodations" },
+    { name: "Boardroom", href: "/accommodations" },
   ],
 };
 
@@ -37,9 +36,12 @@ export const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/">
-              <h2 className="font-display text-3xl text-cream mb-4">
-                Crest Woods<span className="text-gold-accent">.</span>
-              </h2>
+              <div className="mb-4">
+                <h2 className="font-display text-3xl text-cream">
+                  Crest Woods<span className="text-gold-accent">.</span>
+                </h2>
+                <p className="text-cream/50 text-xs tracking-wider">by Whistling Woods</p>
+              </div>
             </Link>
             <p className="text-cream/50 font-body text-sm leading-relaxed mb-6 max-w-sm">
               An exclusive vacation home where luxury meets comfort. Experience the
@@ -58,7 +60,7 @@ export const Footer = () => {
               </a>
               <div className="flex items-center gap-2 text-cream/50">
                 <MapPin className="w-4 h-4" />
-                <span className="font-body text-sm">Goba, Kinondoni, Dar es Salaam</span>
+                <span className="font-body text-sm">Goba, Kinzudi, Dar es Salaam</span>
               </div>
             </div>
 

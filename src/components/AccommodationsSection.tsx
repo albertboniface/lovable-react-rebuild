@@ -12,7 +12,7 @@ const accommodations = [
     description:
       "Our premier accommodation offering unparalleled luxury with premium furnishings, spacious living areas, and exclusive amenities for the discerning guest.",
     guests: 2,
-    size: "85 m²",
+    size: "144 m²",
     beds: "King",
     price: "Premium",
     featured: true,
@@ -23,7 +23,7 @@ const accommodations = [
     description:
       "Elegant and comfortable suites featuring modern design, quality amenities, and all the essentials for a perfect stay.",
     guests: 2,
-    size: "65 m²",
+    size: "55 m²",
     beds: "King",
     price: "Standard",
     featured: false,

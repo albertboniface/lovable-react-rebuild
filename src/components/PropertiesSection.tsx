@@ -1,6 +1,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { MapPin, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const properties = [
   {
@@ -33,6 +34,10 @@ export const PropertiesSection = () => {
   const titleRef = useRef(null);
   const isInView = useInView(titleRef, { once: true, margin: "-100px" });
 
+  const handleExploreProperties = () => {
+    window.open("https://whistlingwoods.co.tz/", "_blank");
+  };
+
   return (
     <section className="section-padding bg-forest">
       <div className="container-luxury mx-auto">
@@ -41,7 +46,7 @@ export const PropertiesSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <p className="text-gold-accent font-body text-sm tracking-[0.3em] uppercase mb-4">
             Our Portfolio
@@ -49,12 +54,15 @@ export const PropertiesSection = () => {
           <h2 className="font-display text-3xl md:text-5xl text-cream mb-6">
             Properties We Manage
           </h2>
-          <p className="text-cream/60 max-w-2xl mx-auto font-body">
+          <p className="text-cream/60 max-w-2xl mx-auto font-body mb-8">
             Discover our collection of premium vacation properties across Tanzania.
           </p>
+          <Button variant="hero" size="lg" onClick={handleExploreProperties}>
+            Explore Our Properties
+          </Button>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
           {properties.map((property, index) => {
             const cardRef = useRef(null);
             const isCardInView = useInView(cardRef, { once: true, margin: "-50px" });
@@ -72,7 +80,7 @@ export const PropertiesSection = () => {
                 className="group relative p-8 bg-gradient-to-br from-primary-green/20 to-primary-green/10 rounded-sm border border-gold-accent/20 hover:border-gold-accent/50 transition-all duration-500 hover:-translate-y-2 hover:shadow-elevated"
               >
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <ExternalLink className="w-4 h-4 text-gold-accent" />
+                  {property.external && <ExternalLink className="w-4 h-4 text-gold-accent" />}
                 </div>
                 
                 <h3 className="font-display text-xl text-cream mb-3 group-hover:text-gold-accent transition-colors">

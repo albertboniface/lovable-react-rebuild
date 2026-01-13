@@ -7,7 +7,6 @@ import { Link, useLocation } from "react-router-dom";
 const navLinks = [
   { name: "Home", href: "/", external: false },
   { name: "Accommodations", href: "/accommodations", external: false },
-  { name: "Amenities", href: "/amenities", external: false },
   { name: "Gallery", href: "/gallery", external: false },
   { name: "About Us", href: "/about", external: false },
 ];
@@ -50,13 +49,22 @@ export const Navigation = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link to="/" className="relative z-10">
-              <h1
-                className={`font-display text-2xl md:text-3xl font-semibold tracking-wide transition-colors duration-300 ${
-                  isScrolled || !isHomePage ? "text-forest" : "text-cream"
-                }`}
-              >
-                Crest Woods<span className="text-gold-accent">.</span>
-              </h1>
+              <div className="flex flex-col">
+                <h1
+                  className={`font-display text-2xl md:text-3xl font-semibold tracking-wide transition-colors duration-300 ${
+                    isScrolled || !isHomePage ? "text-forest" : "text-cream"
+                  }`}
+                >
+                  Crest Woods<span className="text-gold-accent">.</span>
+                </h1>
+                <span
+                  className={`text-xs tracking-wider transition-colors duration-300 ${
+                    isScrolled || !isHomePage ? "text-forest/60" : "text-cream/60"
+                  }`}
+                >
+                  by Whistling Woods
+                </span>
+              </div>
             </Link>
 
             {/* Desktop Navigation */}

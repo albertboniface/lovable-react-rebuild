@@ -34,19 +34,33 @@ export const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="text-gold-accent font-body text-sm md:text-base tracking-[0.3em] uppercase mb-6"
         >
-          Welcome to Crest Woods
+          Welcome to
         </motion.p>
 
-        <motion.h1
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-display text-4xl md:text-6xl lg:text-7xl text-cream font-medium leading-tight mb-6"
+          className="mb-6"
+        >
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl text-cream font-medium leading-tight">
+            Crest Woods
+          </h1>
+          <p className="text-cream/60 font-body text-lg md:text-xl tracking-wider mt-2">
+            by Whistling Woods
+          </p>
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="font-display text-2xl md:text-4xl lg:text-5xl text-cream font-medium leading-tight mb-6"
         >
           Enjoy Luxury
           <br />
           <span className="italic text-gold-accent-light">Living</span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
