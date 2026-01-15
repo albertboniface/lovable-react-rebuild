@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube, Phone, Mail, MapPin } from "lucide-react";
+import { Instagram, Phone, Mail, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const footerLinks = {
@@ -20,13 +20,6 @@ const footerLinks = {
     { name: "Boardroom", href: "/accommodations" },
   ],
 };
-
-const socialLinks = [
-  { icon: Facebook, href: "#" },
-  { icon: Instagram, href: "#" },
-  { icon: Twitter, href: "#" },
-  { icon: Youtube, href: "#" },
-];
 
 export const Footer = () => {
   return (
@@ -65,15 +58,14 @@ export const Footer = () => {
             </div>
 
             <div className="flex gap-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/50 hover:text-gold-accent hover:border-gold-accent transition-colors"
-                >
-                  <social.icon className="w-4 h-4" />
-                </a>
-              ))}
+              <a
+                href="https://www.instagram.com/crestwoods__/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full border border-cream/20 flex items-center justify-center text-cream/50 hover:text-gold-accent hover:border-gold-accent transition-colors"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
             </div>
           </div>
 

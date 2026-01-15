@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-living-room.jpg";
+import heroImage from "@/assets/gallery/cw-01.jpg";
 
 export const HeroSection = () => {
   const handleBookYourStay = () => {

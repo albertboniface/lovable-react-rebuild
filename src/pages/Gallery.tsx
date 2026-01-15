@@ -4,50 +4,45 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { X } from "lucide-react";
 
-// Import gallery images
-import exteriorGarden from "@/assets/gallery/exterior-garden.jpg";
-import poolArea from "@/assets/gallery/pool-area.jpg";
-import livingRoom from "@/assets/gallery/living-room.jpg";
-import diningArea from "@/assets/gallery/dining-area.jpg";
-import suiteBedroom from "@/assets/gallery/suite-bedroom.jpg";
-import suiteBathroom from "@/assets/gallery/suite-bathroom.jpg";
-import loungeArea from "@/assets/gallery/lounge-area.jpg";
-import kitchen from "@/assets/gallery/kitchen.jpg";
-import barArea from "@/assets/gallery/bar-area.jpg";
-import rooftop from "@/assets/gallery/rooftop.jpg";
-import gamingRoom from "@/assets/gallery/gaming-room.jpg";
-import boardroom from "@/assets/gallery/boardroom.jpg";
-import gym from "@/assets/gallery/gym.jpg";
-import exteriorFront from "@/assets/gallery/exterior-front.jpg";
-import bedroomDetail from "@/assets/gallery/bedroom-detail.jpg";
+// Import all gallery images from Pixieset
+import cw01 from "@/assets/gallery/cw-01.jpg";
+import cw02 from "@/assets/gallery/cw-02.jpg";
+import cw03 from "@/assets/gallery/cw-03.jpg";
+import cw04 from "@/assets/gallery/cw-04.jpg";
+import cw05 from "@/assets/gallery/cw-05.jpg";
+import cw06 from "@/assets/gallery/cw-06.jpg";
+import cw07 from "@/assets/gallery/cw-07.jpg";
+import cw08 from "@/assets/gallery/cw-08.jpg";
+import cw09 from "@/assets/gallery/cw-09.jpg";
+import cw10 from "@/assets/gallery/cw-10.jpg";
+import cw11 from "@/assets/gallery/cw-11.jpg";
+import cw12 from "@/assets/gallery/cw-12.jpg";
+import cw13 from "@/assets/gallery/cw-13.jpg";
+import cw14 from "@/assets/gallery/cw-14.jpg";
+import cw15 from "@/assets/gallery/cw-15.jpg";
+import cw16 from "@/assets/gallery/cw-16.jpg";
 
 const galleryImages = [
-  { src: exteriorGarden, alt: "Exterior Garden View", category: "Exterior" },
-  { src: poolArea, alt: "Pool Area", category: "Exterior" },
-  { src: exteriorFront, alt: "Front Entrance", category: "Exterior" },
-  { src: livingRoom, alt: "Living Room", category: "Living Spaces" },
-  { src: loungeArea, alt: "Lounge Area", category: "Living Spaces" },
-  { src: diningArea, alt: "Dining Area", category: "Living Spaces" },
-  { src: kitchen, alt: "Modern Kitchen", category: "Living Spaces" },
-  { src: suiteBedroom, alt: "Suite Bedroom", category: "Suites" },
-  { src: bedroomDetail, alt: "Bedroom Details", category: "Suites" },
-  { src: suiteBathroom, alt: "Suite Bathroom", category: "Suites" },
-  { src: barArea, alt: "Bar Area", category: "Amenities" },
-  { src: gamingRoom, alt: "Gaming Room", category: "Amenities" },
-  { src: boardroom, alt: "Boardroom", category: "Amenities" },
-  { src: gym, alt: "Fitness Gym", category: "Amenities" },
-  { src: rooftop, alt: "Rooftop Barbecue", category: "Amenities" },
+  { src: cw01, alt: "Crest Woods View 1", category: "All" },
+  { src: cw02, alt: "Crest Woods View 2", category: "All" },
+  { src: cw03, alt: "Crest Woods View 3", category: "All" },
+  { src: cw04, alt: "Crest Woods View 4", category: "All" },
+  { src: cw05, alt: "Crest Woods View 5", category: "All" },
+  { src: cw06, alt: "Crest Woods View 6", category: "All" },
+  { src: cw07, alt: "Crest Woods View 7", category: "All" },
+  { src: cw08, alt: "Crest Woods View 8", category: "All" },
+  { src: cw09, alt: "Crest Woods View 9", category: "All" },
+  { src: cw10, alt: "Crest Woods View 10", category: "All" },
+  { src: cw11, alt: "Crest Woods View 11", category: "All" },
+  { src: cw12, alt: "Crest Woods View 12", category: "All" },
+  { src: cw13, alt: "Crest Woods View 13", category: "All" },
+  { src: cw14, alt: "Crest Woods View 14", category: "All" },
+  { src: cw15, alt: "Crest Woods View 15", category: "All" },
+  { src: cw16, alt: "Crest Woods View 16", category: "All" },
 ];
 
-const categories = ["All", "Exterior", "Living Spaces", "Suites", "Amenities"];
-
 const Gallery = () => {
-  const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
-
-  const filteredImages = selectedCategory === "All" 
-    ? galleryImages 
-    : galleryImages.filter(img => img.category === selectedCategory);
 
   return (
     <main className="overflow-x-hidden">
@@ -83,36 +78,15 @@ const Gallery = () => {
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="py-8 bg-cream border-b border-forest/10">
-        <div className="container-luxury mx-auto px-6 lg:px-12">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full font-body text-sm tracking-wide transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-primary-green text-cream"
-                    : "bg-soft-green/30 text-forest hover:bg-soft-green/50"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery Grid */}
       <section className="py-16 bg-cream">
         <div className="container-luxury mx-auto px-6 lg:px-12">
           <motion.div 
             layout
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredImages.map((image, index) => (
+              {galleryImages.map((image, index) => (
                 <motion.div
                   key={image.src}
                   layout
@@ -130,9 +104,6 @@ const Gallery = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-forest/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-gold-accent font-body text-xs tracking-wider uppercase mb-1">
-                      {image.category}
-                    </p>
                     <h3 className="text-cream font-display text-xl">
                       {image.alt}
                     </h3>
@@ -173,9 +144,6 @@ const Gallery = () => {
                 className="w-full h-full object-contain rounded-lg"
               />
               <div className="text-center mt-4">
-                <p className="text-gold-accent font-body text-sm tracking-wider uppercase mb-1">
-                  {selectedImage.category}
-                </p>
                 <h3 className="text-cream font-display text-2xl">
                   {selectedImage.alt}
                 </h3>
